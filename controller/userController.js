@@ -1,12 +1,9 @@
-import mongoose from "../model/user.js";
+import Users from "../model/user.js";
 
-export const getAllusers = async (req, res) => {
+export const getAllUsers = async (req, res){
     try{
-        const user = await User.find();
-        res.status(200).json(user);
-    }catch(err){
-        console.log(err);
-        res.status(500).json({err: err.message});
+        const user = await User.find;
+        
     }
 }
 
@@ -41,5 +38,14 @@ export const updateUser = async (req, res) => {
         );
         if(!user) return res.status(404).json({err: "User not found"});
         res.json(user);
+    }catch(err){
+        console.log(err);
+        process.exit(1);
+    }
+}
+
+export deleteUser = async (req, res) => {
+    try{
+
     }
 }
