@@ -18,4 +18,4 @@ app.get('/', (req, res)=> {
 });
 
 
-app.listen(PORT , (req, res) => console.log("Server running on : http://localhost:27017/Simba"));
+app.listen(PORT , (req, res) => console.log(`Server running on : http://localhost:${PORT}`));
