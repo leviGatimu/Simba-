@@ -1,16 +1,8 @@
 import Users from "../model/user.js";
 
-export const getAllUsers = async (req, res){
+export const getAllUsers = async (req, res) => {
     try{
-        const user = await User.find;
-        
-    }
-}
-
-export const getUserById = async (req, res) => {
-    try{
-        const user = await User.findById(req.params.id);
-        if(!user) return res.status(404).json({err: "User was not found."});
+        const user = await Users.find()
         res.status(200).json(user);
     }catch(err){
         console.log(err);
@@ -18,14 +10,20 @@ export const getUserById = async (req, res) => {
     }
 }
 
-export const createUser = async (req,res) => {
+export  const getUserById = async (req, res) => {
     try{
-        const user = new User(req.params);
-        await user.save();
-        res.status(201).json(user);
+        const user = await Users.findById(req.params.id);
+        if(!user) return res.status(404).json({err: "User is not found."});
+        res.status(200).json(user);
     }catch(err){
         console.log(err);
         process.exit(1);
+    }
+}
+
+export const createUser = async (req , res) =>{
+    try{
+
     }
 }
 
