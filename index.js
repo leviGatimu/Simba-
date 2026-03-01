@@ -14,7 +14,7 @@ app.use('/users', userRoutes);
 
 app.get('/', (req, res)=> {
     res.send("Welcome to homepage");
-    res.send("Please type '/users' in the ur.l bar to continue!");
+    res.send("Please type '/users' in the url bar to continue!");
 });
 
 
